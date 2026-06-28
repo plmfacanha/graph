@@ -1,15 +1,22 @@
-function getPossibleMoves(start, end) {}
+function getPossibleMoves(currPos) {
+  let [x, y] = currPos;
+  console.log(`You are at x: ${x} and y: ${y}`);
+
+  let moves = [];
+
+  if (x === 0 && y === 0) {
+  }
+}
 
 function knightMoves(start, end) {
-  let priorityQueue = [start];
+  let queue = [start];
   let head = 0;
 
-  while (head < priorityQueue.length) {
-    let currPos = priorityQueue[head];
-    console.log(`You are at x: ${currPos[0]} and y: ${currPos[1]}`);
+  while (head < queue.length) {
+    let currPos = queue[head];
 
-    let allPossibleMoves = getPossibleMoves(start, end);
-
+    let allPossibleMoves = getPossibleMoves(currPos);
+    queue.push(allPossibleMoves);
     ++head;
   }
 }
