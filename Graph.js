@@ -1,24 +1,20 @@
-function getPossibleMoves(currPos) {
+function getPossibleMoves(currPos, endPos) {
   let [x, y] = currPos;
-  console.log(`You are at x: ${x} and y: ${y}`);
+  let [j, k] = endPos;
 
-  // TODO: 8 possible moves
-  // ? 1. unless x < 0
-  // ? 2. unless y > 7
-  let moves = [];
+  if (x > 0 && y > 0 && x <= 7 && y <= 7) {
+  }
 }
 
 function knightMoves(start, end) {
   let queue = [start];
   let head = 0;
+  let currPos = queue[head];
 
   while (head < queue.length) {
-    let currPos = queue[head];
-
-    let allPossibleMoves = getPossibleMoves(currPos);
+    let allPossibleMoves = getPossibleMoves(currPos, end);
     queue.push(allPossibleMoves);
-    ++head;
   }
 }
 
-knightMoves([0, 0], [3, 3]);
+knightMoves([3, 3], [4, 3]);
