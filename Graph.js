@@ -12,9 +12,11 @@ function getPossibleMoves(currPos) {
     [x + 2, y - 1],
   ];
 
-  let filteredMoves = moves.filter(
+  const filteredMoves = moves.filter(
     ([x, y]) => x >= 0 && x <= 7 && y >= 0 && y <= 7,
   );
+
+  return filteredMoves;
 }
 
 function knightMoves(start, end) {
