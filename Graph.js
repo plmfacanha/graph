@@ -1,9 +1,20 @@
-function getPossibleMoves(currPos, endPos) {
+function getPossibleMoves(currPos) {
   let [x, y] = currPos;
-  let [j, k] = endPos;
 
-  if (x > 0 && y > 0 && x <= 7 && y <= 7) {
-  }
+  let moves = [
+    [x - 1, y + 2],
+    [x - 1, y - 2],
+    [x + 1, y + 2],
+    [x + 1, y - 2],
+    [x - 2, y + 1],
+    [x - 2, y - 1],
+    [x + 2, y + 1],
+    [x + 2, y - 1],
+  ];
+
+  let filteredMoves = moves.filter(
+    ([x, y]) => x >= 0 && x <= 7 && y >= 0 && y <= 7,
+  );
 }
 
 function knightMoves(start, end) {
@@ -12,7 +23,7 @@ function knightMoves(start, end) {
   let currPos = queue[head];
 
   while (head < queue.length) {
-    let allPossibleMoves = getPossibleMoves(currPos, end);
+    let allPossibleMoves = getPossibleMoves(currPos);
     queue.push(allPossibleMoves);
   }
 }
