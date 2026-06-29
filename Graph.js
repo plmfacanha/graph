@@ -2,10 +2,10 @@ function getPossibleMoves(currPos) {
   let [x, y] = currPos;
   console.log(`You are at x: ${x} and y: ${y}`);
 
+  // TODO: 8 possible moves
+  // ? 1. unless x < 0
+  // ? 2. unless y > 7
   let moves = [];
-
-  if (x === 0 && y === 0) {
-  }
 }
 
 function knightMoves(start, end) {
