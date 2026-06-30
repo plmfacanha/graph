@@ -26,7 +26,10 @@ function knightMoves(start, end) {
 
   while (head < queue.length) {
     let allPossibleMoves = getPossibleMoves(currPos);
-    queue.push(allPossibleMoves);
+    allPossibleMoves.forEach((move) => {
+      queue.push(move);
+    });
+    ++head;
   }
 }
 
