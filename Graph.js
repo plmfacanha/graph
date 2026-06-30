@@ -20,17 +20,35 @@ function getPossibleMoves(currPos) {
 }
 
 function knightMoves(start, end) {
-  let queue = [start];
   let head = 0;
+  let queue = [start];
   let currPos = queue[head];
+  let path = false;
+  let visited = [currPos];
 
   while (head < queue.length) {
-    if (currPos === end) return;
-    let allPossibleMoves = getPossibleMoves(currPos);
-    allPossibleMoves.forEach((move) => {
-      queue.push(move);
-    });
-    currPos = [head++];
+    if (!visited.includes(currPos)) {
+      if (currPos === end) {
+        path = true;
+        return;
+      }
+      let allPossibleMoves = getPossibleMoves(currPos);
+      allPossibleMoves.forEach((move) => {
+        queue.push(move);
+      });
+      currPos = queue[++head];
+      visited.push(currPos);
+    }
+  }
+
+  if (path) {
+    console.log(
+      `You've made it in ${head}. Shortest path was ${visited.forEach(
+        (path) => {
+          path;
+        },
+      )}`,
+    );
   }
 }
 
