@@ -19,15 +19,21 @@ function getPossibleMoves(currPos) {
   return filteredMoves;
 }
 
-function knightMoves(start, end) {
-  let head = 0;
-  let queue = [start];
-  let currPos = queue[head];
+// ? Here are some core ideas to keep in mind:
+// * Represent positions as coordinates: Each square can be written as [x, y], where both values range from 0 to 7.
+// * Use a queue: Like in tree BFS, you’ll use a queue to keep track of the next positions to explore.
+// * Track visited positions: Unlike trees, graphs can revisit the same position through different paths — so be sure to track visited positions to avoid loops or unnecessary repeats.
 
-  while (head < queue.length) {
-    console.log(currPos);
-    ++head;
+function knightMoves(start, end) {
+  let index = 0;
+  let queue = [start];
+
+  let currPos = queue[index];
+  let visited = [];
+
+  while (index < queue.length) {
+    let possibleMoves = getPossibleMoves(currPos);
   }
 }
 
-knightMoves([3, 3], [4, 3]);
+knightMoves([0, 0], [3, 3]);
