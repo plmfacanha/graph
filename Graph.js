@@ -22,8 +22,12 @@ function getPossibleMoves(currPos) {
 function knightMoves(start, end) {
   let head = 0;
   let queue = [start];
+  let currPos = queue[head];
 
-  console.log(queue);
+  while (head < queue.length) {
+    console.log(currPos);
+    ++head;
+  }
 }
 
 knightMoves([3, 3], [4, 3]);
